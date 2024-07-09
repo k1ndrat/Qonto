@@ -1,0 +1,124 @@
+.header {
+  background-color: $grey;
+  color: #fff;
+  border-bottom: toRem(1) solid $light-grey;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: toRem(20);
+    padding-top: toRem(16);
+    padding-bottom: toRem(16);
+    max-width: toRem(1360);
+    @media (max-width: $mobile) {
+      padding-top: toRem(12);
+      padding-bottom: toRem(12);
+      column-gap: toRem(10);
+    }
+  }
+
+  &__body {
+    display: flex;
+    align-items: center;
+    column-gap: toRem(31); // 34 - 3
+    @media (max-width: $mobileSmall) {
+      column-gap: toRem(12);
+    }
+  }
+
+  &__logo {
+    font-size: toRem(24);
+    font-weight: 600;
+    position: relative;
+    z-index: 2;
+    @media (max-width: $mobileSmall) {
+      font-size: toRem(16);
+    }
+  }
+
+  &__menu {
+  }
+
+  &__button {
+    text-wrap: nowrap;
+  }
+
+  &__button--transparent {
+    border-color: transparent;
+    font-weight: 300;
+    background-color: transparent;
+    color: #fff;
+    font-size: toRem(17);
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: #fff;
+        color: $grey;
+      }
+    }
+    @media (max-width: $mobileSmall) {
+      font-size: toRem(13);
+    }
+  }
+}
+.menu {
+  &__icon {
+  }
+
+  &__body {
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: toRem(14); // 20 - 2*3
+    font-size: toRem(17);
+  }
+
+  &__item {
+    font-weight: 300;
+    line-height: 1.39;
+    position: relative;
+    transition: all 0.3s;
+    z-index: 2;
+    padding-left: toRem(3);
+    padding-right: toRem(3);
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: toRem(2);
+      background-color: #fff;
+      opacity: 0;
+      transition: all 0.3s;
+      z-index: -1;
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        color: $grey;
+        &::before {
+          opacity: 1;
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  &__link {
+  }
+}
+.icon-menu {
+}
+.header {
+  &__actions {
+    display: flex;
+    gap: toRem(6);
+    position: relative;
+    z-index: 2;
+  }
+}

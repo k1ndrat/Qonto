@@ -1,0 +1,65 @@
+// Заголовки, загальні БЕМ блоки та інше...
+.button {
+  font-weight: 400;
+  font-size: toRem(15);
+  line-height: 1.56;
+  background-color: #fff;
+  color: $grey;
+  padding: toRem(11) toRem(23);
+  border-radius: toRem(4);
+  border: 1px solid #fff;
+  transition:
+    color 0.3s,
+    background-color 0.3s;
+  // text-wrap: nowrap;
+  @media (max-width: $mobileSmall) {
+    padding: toRem(4) toRem(8);
+    font-size: toRem(13);
+  }
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: transparent;
+      color: #fff;
+    }
+  }
+  &.dark {
+    background-color: $grey;
+    border-color: $grey;
+    color: #fff;
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: transparent;
+        color: $grey;
+      }
+    }
+  }
+
+  &.transparent {
+    background-color: transparent;
+    color: #fff;
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: #fff;
+        color: $grey;
+      }
+    }
+  }
+}
+
+.title {
+  font-size: toRem(38);
+  line-height: 1.24;
+  text-align: center;
+  &:not(:last-child) {
+    margin-bottom: toRem(64);
+  }
+  @media (max-width: $mobile) {
+    font-size: toRem(30);
+    &:not(:last-child) {
+      margin-bottom: toRem(35);
+    }
+  }
+  @media (max-width: $mobileSmall) {
+    font-size: toRem(24);
+  }
+}
